@@ -28,17 +28,17 @@
   <body>
     <header>
       <img
-        src="./media/logo/Logo.png"
+        src="./media/logo/logo.png"
         class="logo"
         alt="Logo Les petits plats"
       />
       <div class="app">
+        <h1>
+          Cherchez parmi plus de 1500 recettes<br />
+          du quotidien, simples et délicieuses
+        </h1>
         <form action="">
-          <h1>
-            Cherchez parmi plus de 1500 recettes<br />
-            du quotidien, simples et délicieuses
-          </h1>
-
+          <label for="search"></label>
           <div class="appinput">
             <input
               type="text"
@@ -76,7 +76,10 @@
           <!-- Ajoutez d'autres options ici -->
         </select>
         <div class="number">
-          <span id="nbrecipe">1500 recettes</span>
+          <span id="nbrecipe"
+            >1500<!-- ici il faudra que je mette un JS pour le nombre affiché-->
+            recettes</span
+          >
         </div>
       </div>
 
