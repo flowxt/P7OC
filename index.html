@@ -16,12 +16,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./CSS/style.css" />
     <title>Les petits plats</title>
   </head>
@@ -55,26 +57,27 @@
     </header>
     <main>
       <div class="filters">
-        <select id="ingredients" class="filter1">
-          <option value="" disabled selected>Ingrédients</option>
-          <!-- <option value="ingredient1">Ingrédient 1</option>
-          <option value="ingredient2">Ingrédient 2</option> -->
-          <!-- Ajoutez d'autres options ici -->
-        </select>
+        <div class="filter-group">
+          <select id="ingredients" class="filter1">
+            <option value="">Ingrédients</option>
+          </select>
+          <div id="selected-ingredients" class="selected-tags"></div>
+        </div>
 
-        <select id="appliances" class="filter1">
-          <option value="" disabled selected>Appareils</option>
-          <!-- <option value="appliance1">Appareil 1</option>
-          <option value="appliance2">Appareil 2</option> -->
-          <!-- Ajoutez d'autres options ici -->
-        </select>
+        <div class="filter-group">
+          <select id="appliances" class="filter1">
+            <option value="">Appareils</option>
+          </select>
+          <div id="selected-appliances" class="selected-tags"></div>
+        </div>
 
-        <select id="ustensils" class="filter1">
-          <option value="" disabled selected>Ustensiles</option>
-          <!-- <option value="utensil1">Ustensile 1</option>
-          <option value="utensil2">Ustensile 2</option> -->
-          <!-- Ajoutez d'autres options ici -->
-        </select>
+        <div class="filter-group">
+          <select id="ustensils" class="filter1">
+            <option value="">Ustensiles</option>
+          </select>
+          <div id="selected-ustensils" class="selected-tags"></div>
+        </div>
+
         <div class="number">
           <span id="nbrecipe"
             >1500<!-- ici il faudra que je mette un JS pour le nombre affiché-->
@@ -85,6 +88,10 @@
 
       <div id="recipes-container"></div>
     </main>
-    <script type="module" src="./JS/templates/index.js"></script>
+    <script type="module" src="./JS/displayRecipes.js"></script>
+    <script type="module" src="./JS/filterRecipes.js"></script>
+    <script type="module" src="./JS/updateTags.js"></script>
+    <script type="module" src="./JS/manageTags.js"></script>
+    <script type="module" src="./JS/main.js"></script>
   </body>
 </html>
