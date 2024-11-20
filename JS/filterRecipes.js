@@ -26,11 +26,19 @@ function matchItems(recipeItems, selectedItems, comparisonType = "some") {
 // Fonction pour filtrer les recettes par texte (name et description uniquement)
 export function filterRecipesByText(searchText, recipes) {
   const lowerSearchText = searchText.toLowerCase();
-  return recipes.filter(
-    (recipe) =>
+  const filteredRecipes = [];
+
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
+    if (
       recipe.name.toLowerCase().includes(lowerSearchText) ||
       recipe.description.toLowerCase().includes(lowerSearchText)
-  );
+    ) {
+      filteredRecipes.push(recipe);
+    }
+  }
+
+  return filteredRecipes;
 }
 
 // Fonction pour filtrer les recettes par plusieurs tags
