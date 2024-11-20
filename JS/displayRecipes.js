@@ -10,6 +10,17 @@ export function displayRecipes(
 ) {
   // Vide le conteneur des recettes pour éviter la duplication
   recipesContainer.innerHTML = "";
+
+  // Si aucune recette n'est trouvée, afficher un message
+  if (recipesToDisplay.length === 0) {
+    const noRecipesMessage = document.createElement("p");
+    noRecipesMessage.classList.add("no-recipes-message");
+    noRecipesMessage.textContent = "Aucune recette n'a été trouvée.";
+    recipesContainer.appendChild(noRecipesMessage);
+    updateRecipeCount(0); // Met à jour le compteur à 0
+    return;
+  }
+
   // Parcourir chaque recette du tableau de recettes à afficher
   for (let recipe of recipesToDisplay) {
     const recipeCard = document.createElement("div");

@@ -223,3 +223,10 @@ p.description {
     color: #7A7A7A;
   
 }
+
+.no-recipes-message {
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+  }
