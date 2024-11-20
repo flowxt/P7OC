@@ -48,9 +48,13 @@ function performSearch() {
   );
 
   // Affiche les recettes filtrées et met à jour le nombre de recettes
-  displayRecipes(filteredRecipes, recipesContainer, (count) =>
-    updateRecipeCount(count, nbRecipeSpan)
+  displayRecipes(
+    filteredRecipes,
+    recipesContainer,
+    (count) => updateRecipeCount(count, nbRecipeSpan),
+    searchText // Passe le texte recherché pour afficher un message personnalisé
   );
+
   // Met à jour la liste des tags disponibles en fonction des recettes filtrées
   updateAvailableTags(filteredRecipes, updateSelect);
 }
