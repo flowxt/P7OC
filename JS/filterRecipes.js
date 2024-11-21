@@ -24,12 +24,22 @@ function matchItems(recipeItems, selectedItems, comparisonType = "some") {
 }
 
 // Fonction pour filtrer les recettes par texte (name et description uniquement)
+// Fonction pour échapper les caractères spéciaux dans le texte de recherche
+function sanitizeInput(input) {
+  const div = document.createElement("div");
+  div.textContent = input;
+  return div.innerHTML;
+}
+
+// Fonction pour filtrer les recettes par texte (name et description uniquement)
 export function filterRecipesByText(searchText, recipes) {
-  const lowerSearchText = searchText.toLowerCase();
+  // Assainir le texte de recherche pour éviter les balises malveillantes
+  const sanitizedSearchText = sanitizeInput(searchText).toLowerCase();
+
   return recipes.filter(
     (recipe) =>
-      recipe.name.toLowerCase().includes(lowerSearchText) ||
-      recipe.description.toLowerCase().includes(lowerSearchText)
+      recipe.name.toLowerCase().includes(sanitizedSearchText) ||
+      recipe.description.toLowerCase().includes(sanitizedSearchText)
   );
 }
 
